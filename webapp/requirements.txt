@@ -1,0 +1,8 @@
+# NAQSH AI web app — Python backend
+# Already in ~/ghadi/.venv: tensorflow, keras, numpy, pillow. New for the website: fastapi, uvicorn.
+fastapi>=0.110
+uvicorn>=0.29
+tensorflow>=2.16
+keras>=3.0
+numpy
+pillow
