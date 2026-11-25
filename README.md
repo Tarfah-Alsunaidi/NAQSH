@@ -4,7 +4,7 @@
 
 | Resource | Link |
 |---|---|
-| Presentation | [View the presentation](PRESENTATION_LINK_HERE) |
+| Presentation | [View the presentation](docs/NAQSH_AI_Presentation.html) |
 | Live demo | [Try NAQSH AI](DEMO_LINK_HERE) |
 
 ---
