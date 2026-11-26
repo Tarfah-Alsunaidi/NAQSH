@@ -97,3 +97,27 @@ You only need to rebuild the frontend if you edit `frontend/src`:
 - The Jabal ʿIkmah panels and several other inscriptions have no verified reading yet.
 - Two photos (IMG-092, IMG-152) are CC BY-NC: fine for a student project, not for a commercial app.
 - This is a student project. It is not affiliated with the Royal Commission for AlUla.
+
+## Free online version (GitHub Pages)
+
+The same model also runs **inside the browser**, so the site can be hosted for free with no server.
+
+- `models/tfjs/` holds the model converted to TensorFlow.js from `models/naqsh_model.keras`
+  (SavedModel → `tensorflowjs_converter`, graph model).
+- `frontend/src/api.static.js` replaces the server API: it prepares each photo exactly like the
+  notebook (EXIF rotation, RGB, `ImageOps.pad` to 224×224 with grey 127 using Pillow's BICUBIC filter,
+  ported in `frontend/src/pilimage.js`), scales it to −1..1 and applies the same threshold.
+- Checked in headless Chrome on all 58 test photos (35 known + 23 unknown): same top class and
+  same accept/reject decision as Keras for every photo; largest score difference 5 × 10⁻⁶.
+
+Rebuild the static site:
+
+```bash
+python tools/export_static_data.py frontend/static/data
+cd frontend && node build-static.mjs
+```
+
+Then copy `frontend/static` to `docs/app` in the repository. With GitHub Pages serving `main /docs`,
+the site is at `https://<user>.github.io/<repo>/app/`.
+
+TensorFlow.js (Apache-2.0) is included in `frontend/vendor/`.

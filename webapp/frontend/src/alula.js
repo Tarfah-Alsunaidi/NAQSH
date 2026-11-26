@@ -1,7 +1,7 @@
 // Static content for the home "experience": the scripts written in AlUla and the sites where they are found.
 // Every photo is a real, openly licensed photograph from the project dataset (credits shown on each card).
 
-const IMG = (f) => `/assets/types/${f}`;
+const IMG = (f) => `assets/types/${f}`;
 
 export const SCRIPTS = [
   {
