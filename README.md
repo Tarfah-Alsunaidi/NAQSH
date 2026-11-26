@@ -4,7 +4,7 @@
 
 | Resource | Link |
 |---|---|
-| Presentation | [View the presentation](https://tarfah-alsunaidi.github.io/NAQSH/) |
+| Presentation | [View the presentation](https://naqsh-ai.netlify.app/) |
 | Live demo | [Try NAQSH AI](webapp/) |
 
 ---
